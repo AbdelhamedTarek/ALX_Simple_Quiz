@@ -3,15 +3,17 @@ function checkAnswer() {
   const correctAnswer = "4";
 
   // Retrieve the user's answer
-  const userAnswer = document.querySelector('input[name="quiz"]:checked');
+  let userAnswer = document.querySelector('input[name="quiz"]:checked');
+
+  userAnswer = userAnswer.value;
 
   // Get the feedback element
   const feedback = document.getElementById("feedback");
 
   // Check if the user selected an answer
-  if (userAnswer.value) {
+  if (userAnswer) {
     // Compare the user's answer with the correct answer
-    if (userAnswer.value === correctAnswer) {
+    if (userAnswer === correctAnswer) {
       feedback.textContent = "Correct! Well done."; // Correct answer feedback
       feedback.style.color = "green"; // Change text color to green
     } else {
