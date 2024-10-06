@@ -9,11 +9,9 @@ function checkAnswer() {
   const feedback = document.getElementById("feedback");
 
   // Check if the user selected an answer
-  if (userAnswer) {
-    const selectedValue = userAnswer.value; // Get the value of the selected answer
-
+  if (userAnswer.value) {
     // Compare the user's answer with the correct answer
-    if (selectedValue === correctAnswer) {
+    if (userAnswer.value === correctAnswer) {
       feedback.textContent = "Correct! Well done."; // Correct answer feedback
       feedback.style.color = "green"; // Change text color to green
     } else {
