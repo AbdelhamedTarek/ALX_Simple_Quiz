@@ -1,19 +1,15 @@
-// Function for addition
 function add(number1, number2) {
   return number1 + number2;
 }
 
-// Function for subtraction
 function subtract(number1, number2) {
   return number1 - number2;
 }
 
-// Function for multiplication
 function multiply(number1, number2) {
   return number1 * number2;
 }
 
-// Function for division
 function divide(number1, number2) {
   if (number2 !== 0) {
     return number1 / number2;
@@ -22,7 +18,6 @@ function divide(number1, number2) {
   }
 }
 
-// Function to attach event listeners to buttons
 function attachEventListeners() {
   document.getElementById("add").addEventListener("click", function () {
     const number1 = parseFloat(document.getElementById("number1").value) || 0;
@@ -53,5 +48,4 @@ function attachEventListeners() {
   });
 }
 
-// Call the function to attach event listeners after the page loads
 window.onload = attachEventListeners;
