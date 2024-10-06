@@ -1,45 +1,57 @@
-// Function to perform the calculation
-function calculate(operation) {
-  const number1 = parseFloat(document.getElementById("number1").value);
-  const number2 = parseFloat(document.getElementById("number2").value);
-  let result;
-
-  // Perform the operation based on the button clicked
-  switch (operation) {
-    case "add":
-      result = number1 + number2;
-      break;
-    case "subtract":
-      result = number1 - number2;
-      break;
-    case "multiply":
-      result = number1 * number2;
-      break;
-    case "divide":
-      if (number2 !== 0) {
-        result = number1 / number2;
-      } else {
-        result = "Error: Division by zero";
-      }
-      break;
-    default:
-      result = "Invalid operation";
-  }
-
-  // Display the result
-  document.getElementById("calculation-result").textContent = result;
+// Function for addition
+function add(number1, number2) {
+  return number1 + number2;
 }
 
-// Add event listeners to the buttons
-document.getElementById("add").addEventListener("click", function () {
-  calculate("add");
-});
-document.getElementById("subtract").addEventListener("click", function () {
-  calculate("subtract");
-});
-document.getElementById("multiply").addEventListener("click", function () {
-  calculate("multiply");
-});
-document.getElementById("divide").addEventListener("click", function () {
-  calculate("divide");
-});
+// Function for subtraction
+function subtract(number1, number2) {
+  return number1 - number2;
+}
+
+// Function for multiplication
+function multiply(number1, number2) {
+  return number1 * number2;
+}
+
+// Function for division
+function divide(number1, number2) {
+  if (number2 !== 0) {
+    return number1 / number2;
+  } else {
+    return "Error: Division by zero";
+  }
+}
+
+// Function to attach event listeners to buttons
+function attachEventListeners() {
+  document.getElementById("add").addEventListener("click", function () {
+    const number1 = parseFloat(document.getElementById("number1").value) || 0;
+    const number2 = parseFloat(document.getElementById("number2").value) || 0;
+    const result = add(number1, number2);
+    document.getElementById("calculation-result").textContent = result;
+  });
+
+  document.getElementById("subtract").addEventListener("click", function () {
+    const number1 = parseFloat(document.getElementById("number1").value) || 0;
+    const number2 = parseFloat(document.getElementById("number2").value) || 0;
+    const result = subtract(number1, number2);
+    document.getElementById("calculation-result").textContent = result;
+  });
+
+  document.getElementById("multiply").addEventListener("click", function () {
+    const number1 = parseFloat(document.getElementById("number1").value) || 0;
+    const number2 = parseFloat(document.getElementById("number2").value) || 0;
+    const result = multiply(number1, number2);
+    document.getElementById("calculation-result").textContent = result;
+  });
+
+  document.getElementById("divide").addEventListener("click", function () {
+    const number1 = parseFloat(document.getElementById("number1").value) || 0;
+    const number2 = parseFloat(document.getElementById("number2").value) || 0;
+    const result = divide(number1, number2);
+    document.getElementById("calculation-result").textContent = result;
+  });
+}
+
+// Call the function to attach event listeners after the page loads
+window.onload = attachEventListeners;
