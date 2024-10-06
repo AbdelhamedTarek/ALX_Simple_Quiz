@@ -40,11 +40,11 @@ function checkAnswer() {
 
   // Check if the user selected an answer
   if (userAnswer) {
-    const selectedValue = userAnswer.value;
+    // const selectedValue = userAnswer.value;
 
     // Compare the user’s answer with the correct answer
     const feedback = document.getElementById("feedback");
-    if (selectedValue === correctAnswer) {
+    if (userAnswer.value === correctAnswer) {
       feedback.textContent = "Correct! Well done.";
       feedback.style.color = "green";
     } else {
